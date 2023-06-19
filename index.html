@@ -1,11 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Batch1 Lecture 62 Fan ON OFF EFFECT</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+
+    <style>
+        .FanBox {
+            width: 400px;
+            height: 400px;
+            background-image: url("./img/fan-blades-png.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 100px auto;
+            animation: fan 1s linear infinite;
+            animation-play-state: paused;
+        }
+        
+
+        @keyframes fan {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateZ(359deg);
+            }
+
+        }
+
+        .a_tbdr {
+            border: 1px dashed red;
+        }
+    </style>
+    <script>
+        //1 function defiantion
+      //  function stopFan(s) {
+            // funtion may return something
+            //function body
+            // alert('okkk');
+          
+       // }
+
+        function x(elem) {
+            return document.querySelector(elem)
+        }
+
+
+        // function defination
+        function startFan(speed) { // speed is a fornam arg/ params
+            // we have to check someconditon 
+            //if else if else if... else laddar
+            if (speed == 0) {
+               
+                document.querySelector('.FanBox').style.animationPlayState = 'paused';
+
+            }
+            else if (speed==1) {
+                 // Testing
+                //alert('spped1');
+                x('.FanBox').style.animationDuration = '1s';
+                x('.FanBox').style.animationPlayState = 'running';
+
+            }
+            else if (speed == 2) {
+                // Testing
+                //object.method
+              //  alert('okkk')
+                x('data-anil="myfanx"').style.animationDuration = '0.5s';
+                x('data-anil="myfanx"').style.animationPlayState = 'running';
+
+
+
+            } else {
+
+                //object.method
+                document.getElementById('fanboxx').style.animationPlayState = 'running';
+
+                document.getElementById('fanboxx').style.animationDuration = '0.1s';
+
+            }
+
+
+        }
+    </script>
 </head>
+
 <body>
-    
+    <div class="FanBox " id="fanboxx" data-anil="myfanx">
+
+    </div>
+    <div class="" style="text-align: center;">
+        <button onclick="startFan(0)" style="background: aqua;">Stop</button>
+        <button onclick="startFan(1)">A</button>
+        <button onclick="startFan(2)">B</button>
+        <button onclick="startFan(3)">C</button>
+
+    </div>
+
 </body>
+
 </html>
